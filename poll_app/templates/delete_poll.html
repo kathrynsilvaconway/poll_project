@@ -13,17 +13,11 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <div id="result-box">
-        <h3>All Polls</h3>
-        <a href="{% url 'make_poll' %}" class="btn btn-primary">Create Poll</a>
-        <div id="yellow-box">
-            {% for poll in polls%}
-            <h5>{{poll.question}}</h5>
-            <a href="{% url 'vote' poll.id %}" class="btn btn-primary">Vote</a>
-            <a href="{% url 'display_results' poll.id %}" class="btn btn-secondary">View Results</a>
-            <a href="{% url 'delete_poll' poll.id %}" class="btn btn-danger">delete</a>
-            {% endfor %}
-        </div>
-    </div>   
+    <p>Are you sure you want to delete "{{poll}}"?</p>
+    <a href="{% url 'home' %}">No, go back</a>
+    <form method="POST", action=''>
+        {% csrf_token %}
+        <input type="submit" name="Delete It">
+    </form>
 </body>
 </html>
