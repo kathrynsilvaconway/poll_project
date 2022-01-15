@@ -16,9 +16,9 @@
     <div id="result-box">
         <h3>Results for "{{poll.question}}"</h3>
         <div id="yellow-box">
-            <h5>{{poll.one}}{{poll.one_count}}</h5>
-            <h5>{{poll.two}}{{poll.two_count}}</h5>
-            <h5>{{poll.three}}{{poll.three_count}}</h5>
+            <h5>{{poll.one}}:  {{poll.one_count}}</h5>
+            <h5>{{poll.two}}:  {{poll.two_count}}</h5>
+            <h5>{{poll.three}}:  {{poll.three_count}}</h5>
             <a href="{% url 'vote' poll.id %}" class="btn btn-primary">Vote</a>
             <a href="{% url 'home' %}" class="btn btn-secondary">Poll Home</a>
         </div>
